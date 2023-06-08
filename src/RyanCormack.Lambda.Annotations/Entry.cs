@@ -8,8 +8,11 @@ using Amazon.Lambda.Annotations;
 using Amazon.Lambda.Annotations.APIGateway;
 using Amazon.Lambda.Core;
 using Amazon.SimpleNotificationService;
+using RyanCormack.Lambda.Annotations;
 
+[assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.SourceGeneratorLambdaJsonSerializer<SerialisationContext>))]
 namespace RyanCormack.Lambda.Annotations;
+
 public class Entry
 {
     private readonly IOrderMapper _mapper;
